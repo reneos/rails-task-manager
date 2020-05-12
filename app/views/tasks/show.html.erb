@@ -1,8 +1,17 @@
 <% completed = @task.completed ? "done" : "to do" %>
-<h1><%= @task.title %> <%= completed %></h1>
-<div>
-  <%= @task.description %>
+<div class="row mt-5">
+<div class="card col-12">
+  <div class="card-body">
+    <h1 class="card-title"><%= @task.title %></h1>
+    <span class="badge badge-pill badge-success"><%= completed %></span>
+    <div class="card-text">
+      <%= @task.description %>
+    </div>
+    <%= link_to "All tasks", tasks_path, class: "btn btn-primary" %>
+    <%= link_to "Edit this task", edit_task_path(@task), class: "btn btn-primary" %>
+  </div>
+
 </div>
 
-<%= link_to "All tasks", tasks_path %>
-<%= link_to "Edit this task", edit_task_path(@task) %>
+
+</div>
