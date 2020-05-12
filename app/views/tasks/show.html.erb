@@ -1,0 +1,5 @@
+<% completed = @task.completed ? "done" : "to do" %>
+<h1><%= @task.title %> <%= completed %></h1>
+<div>
+  <%= @task.description %>
+</div>

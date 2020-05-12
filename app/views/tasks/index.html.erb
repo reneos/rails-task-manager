@@ -1,0 +1,10 @@
+<ul>
+<% @tasks.each do |task| %>
+  <li>
+    <%= link_to task_path(task) do %>
+      <%= task.completed ? '<i class="far fa-check-square"></i>'.html_safe : '<i class="far fa-square"></i>'.html_safe %>
+      <%= task.title %> || <%= task.description %>
+    <% end %>
+  </li>
+<% end %>
+</ul>
