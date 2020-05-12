@@ -1,0 +1,15 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :title  %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <% if @task.persisted? %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  <% end %>
+  <% if @task.persisted? %>
+    <%= f.submit "Update task" %>
+  <% else %>
+    <%= f.submit "Add task" %>
+  <% end %>
+<% end %>

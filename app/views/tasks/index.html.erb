@@ -1,3 +1,4 @@
+<h1>All tasks</h1>
 <ul>
 <% @tasks.each do |task| %>
   <li>
@@ -8,4 +9,10 @@
     <%= link_to "❌", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
   </li>
 <% end %>
+<% if @tasks.empty? %>
+  <li>No tasks found!</li>
+<% end %>
 </ul>
+
+<%= link_to "Add new task", new_task_path %>
+

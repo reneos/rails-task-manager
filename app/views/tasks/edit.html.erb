@@ -1,8 +1,4 @@
-<h1>Add a task</h1>
-<%= form_for(@task) do |f| %>
-  <%= f.label :title  %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.submit "Update Task" %>
-<% end %>
+<h1>Editing <%= @task.title %></h1>
+<%= render "form", task: @task %>
+
+<%= link_to "Cancel", task_path(@task) %>
